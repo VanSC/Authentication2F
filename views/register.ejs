@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Register</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background: #fff; /* White background */
+      margin: 0;
+      padding: 0;
+      text-align: center;
+      color: #333; /* Dark text color */
+    }
+
+    h1 {
+      color: #8e44ad; /* Purple text color */
+    }
+
+    form {
+      max-width: 400px;
+      margin: 20px auto;
+      padding: 20px;
+      background-color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      color: #333;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 8px;
+      color: #8e44ad;
+    }
+
+    input {
+      width: calc(100% - 16px);
+      padding: 8px;
+      margin-bottom: 16px;
+      box-sizing: border-box;
+      border: none;
+      border-bottom: 1px solid #8e44ad;
+      background-color: #fff; /* White background for input */
+      text-align: left; /* Align text to the left */
+    }
+
+    input:focus {
+      outline: none;
+    }
+
+    button {
+      background-color: #8e44ad;
+      color: white;
+      padding: 10px 15px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #673ab7;
+    }
+
+    a {
+      text-decoration: none;
+      color: #3498db;
+    }
+
+    .login-button {
+      background-color: #9b34db; /* Blue button color */
+      color: white;
+      padding: 10px 15px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+
+    .login-button:hover {
+      background-color: #3a0d4c; /* Darker blue button color on hover */
+    }
+
+    .image-container {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .image-container img {
+      max-width: 40%;
+      height: auto;
+    }
+  </style>
+</head>
+<body>
+  <form action="/auth/register" method="post">
+    <h1>Register User</h1><hr>
+    <div class="image-container">
+      <img src="https://static.vecteezy.com/system/resources/previews/022/360/051/non_2x/add-user-icon-registration-illustration-sign-avatar-symbol-new-profile-logo-vector.jpg" alt="Image">
+    </div>
+    <input type="text" name="firstName" placeholder="First Name" required><br>
+    <input type="text" name="lastName" placeholder="Last Name" required><br>
+    <input type="email" name="email" placeholder="Email" required><br>
+    <input type="text" name="phone" placeholder="Phone"><br>
+    <input type="password" name="password" placeholder="Password" required><br>
+    
+    <button type="submit">Sign up</button>
+    <h4>I have already an account <a href="/auth/login">Login</a></h4>
+  </form>
+</body>
+</html>

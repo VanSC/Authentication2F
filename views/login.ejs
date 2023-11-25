@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background: #fff; /* White background */
+      margin: 0;
+      padding: 0;
+      text-align: center;
+      color: #333; /* Dark text color */
+    }
+
+    h1 {
+      color: #8e44ad; /* Purple text color */
+    }
+
+    form {
+      max-width: 400px;
+      margin: 20px auto;
+      padding: 20px;
+      background-color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      color: #333;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 8px;
+      color: #8e44ad;
+    }
+
+    input {
+      width: calc(100% - 16px);
+      padding: 8px;
+      margin-bottom: 16px;
+      box-sizing: border-box;
+      border: none;
+      border-bottom: 1px solid #8e44ad;
+      background-color: #fff; /* White background for input */
+      text-align: left; /* Align text to the left */
+    }
+
+    input:focus {
+      outline: none;
+    }
+
+    button {
+      background-color: #8e44ad;
+      color: white;
+      padding: 10px 15px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #673ab7;
+    }
+
+    a {
+      text-decoration: none;
+      color: #3498db;
+    }
+
+    .register-button {
+      background-color: #3498db; /* Blue button color */
+      color: white;
+      padding: 10px 15px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+
+    .register-button:hover {
+      background-color: #2980b9; /* Darker blue button color on hover */
+    }
+
+    .image-container img {
+      max-width: 40%;
+      height: auto;
+    }
+  </style>
+</head>
+<body>
+  <form action="/auth/login" method="post">
+    <h1>Login User</h1>
+    <div class="image-container">
+      <img src="data:image/jpeg;base64,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" alt="Image">
+    </div>
+    <input type="email" name="email" placeholder="Enter your email" required><br>
+    <input type="password" name="password" placeholder="Enter your password" required><br>
+
+    <button type="submit">Sign in</button>
+    <h4>I don't have an account <a href="/auth/register">Register</a></h4>
+  </form>
+</body>
+</html>

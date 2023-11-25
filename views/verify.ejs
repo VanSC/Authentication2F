@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Verify Code</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background: #fff; /* White background */
+      margin: 0;
+      padding: 0;
+      text-align: center;
+      color: #333; /* Dark text color */
+    }
+
+    h1 {
+      color: #8e44ad; /* Purple text color */
+    }
+
+    form {
+      max-width: 400px;
+      margin: 20px auto;
+      padding: 20px;
+      background-color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      color: #333;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 8px;
+      color: #8e44ad;
+    }
+
+    input {
+      width: calc(100% - 16px);
+      padding: 8px;
+      margin-bottom: 16px;
+      box-sizing: border-box;
+      border: none;
+      border-bottom: 1px solid #8e44ad;
+      background-color: #fff; /* White background for input */
+      text-align: left; /* Align text to the left */
+    }
+
+    input:focus {
+      outline: none;
+    }
+
+    button {
+      background-color: #8e44ad;
+      color: white;
+      padding: 10px 15px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #673ab7;
+    }
+    
+    .image-container img {
+      max-width: 40%;
+      height: auto;
+      margin-bottom: 20px;
+    }
+  </style>
+</head>
+<body>
+  <form action="/auth/verify" method="post">
+    <h1>Verify Code</h1>
+    <div class="image-container">
+      <img src="https://seeklogo.com/images/T/twitter-verified-badge-gray-logo-EA3A36D931-seeklogo.com.png" alt="Image">
+    </div>
+    <input type="hidden" name="userId" value="<%= userId %>">
+    <label for="code">Enter the code sent to your phone:</label>
+    <input type="text" name="code" placeholder="Enter verification code" required><br>
+
+    <button type="submit">Verify</button>
+  </form>
+</body>
+</html>
